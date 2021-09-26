@@ -3,11 +3,14 @@ import math
 
 bob = turtle.Turtle()
 
-def polygon(t, n, size):
-    angle = 360 / n
+def polyline(t, n, size, angle):
     for i in range(n):
         t.forward(size)
         t.left(angle)
+
+def polygon(t, n, size):
+    angle = 360 / n
+    polyline(t, n, size, angle)
 
 def square(t, size):
     polygon(t, 4, size)
@@ -27,10 +30,10 @@ def arc(t, radius, angle):
     step_length = arc_length / n
     step_angle = angle / n
 
-    for i in range(n):
-        t.forward(step_length)
-        t.left(step_angle)
+    polyline(t, n, step_length, step_angle)
 
-arc(bob, 200, 38)
+
+
+arc(bob, 80, 45)
 
 turtle.mainloop()
