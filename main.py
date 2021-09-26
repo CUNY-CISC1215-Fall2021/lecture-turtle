@@ -2,8 +2,15 @@ import turtle
 
 bob = turtle.Turtle()
 
-for i in range(4):
-    bob.forward(100)
-    bob.left(90)
+def polygon(t, n, size):
+    angle = 360 / n
+    for i in range(n):
+        t.forward(size)
+        t.left(angle)
+
+def square(t, size):
+    polygon(t, 4, size)
+
+square(bob, 100)
 
 turtle.mainloop()
