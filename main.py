@@ -1,4 +1,5 @@
 import turtle
+import math
 
 bob = turtle.Turtle()
 
@@ -11,6 +12,10 @@ def polygon(t, n, size):
 def square(t, size):
     polygon(t, 4, size)
 
-square(bob, 100)
+def circle(t, radius):
+    circumference = radius * 2 * math.pi
+    polygon(bob, 50, circumference / 50)
+
+circle(bob, 80)
 
 turtle.mainloop()
